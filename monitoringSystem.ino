@@ -1,3 +1,4 @@
+
 /*
    Smart remote bee monitoring system - Data acquisition
    April 4, 2022
@@ -87,7 +88,7 @@ void loop(){
     sensorBME();
     sensorHW();
   }
-  if (millis() - previousTime >= 6000){
+  if (millis() - previousTime >= 5000){
     data.concat(light);
     data.concat(" ; ");
     data.concat(avgHumidity);
@@ -102,9 +103,7 @@ void loop(){
     data.concat(" ; ");
     data.concat(avgIntPressure);
     data.concat(" ; ");
-    data.concat(avgIntHumidity-avgHumidity);
-    data.concat(" ; ");
-    data.concat(avgIntTemperature - avgTemperature);         
+    data.concat(millis()/1000);   
     data.concat(">");
     Serial.println(data);
     data = "<";
@@ -126,8 +125,8 @@ void sensorDHT(){
     static unsigned int k = 0;
     float hum, temp;
     
-    hum = 0.9341*dht.readHumidity()+22.319;
-    temp = 0.9341*dht.readTemperature()+3.65;
+    hum = 0.9341*dht.readHumidity() + 22.02;
+    temp = 0.9741*dht.readTemperature() + 4.2;
 
     if (k >= N){
       avgHumidity = avg(humidity, k);
