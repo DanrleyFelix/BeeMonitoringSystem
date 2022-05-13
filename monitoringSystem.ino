@@ -21,9 +21,9 @@
 
 // ===============================================================================
 // --- Including libraries ---
-#include "DHT.h"
+#include <DHT.h>
 #include <Adafruit_Sensor.h>
-#include "Adafruit_BME280.h"
+#include <Adafruit_BME280.h>
 //#include <HX711.h>
 #include <Wire.h>
 
@@ -102,8 +102,6 @@ void loop(){
     data.concat(avgIntTemperature);
     data.concat(" ; ");
     data.concat(avgIntPressure);
-    data.concat(" ; ");
-    data.concat(millis()/1000);   
     data.concat(">");
     Serial.println(data);
     data = "<";
