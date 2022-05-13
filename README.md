@@ -1,3 +1,3 @@
-# monitoringSystem
+# Sistema de monitoramento inteligente para meliponicultura
 
 Neste projeto faço o devido uso de diversos sensores tais como temperatura, umidade, presença, som e peso com o intuito de levantar dados de algumas abelhas nativas sem ferrão. Os sensores serão aplicados em um apiário específico com uma câmera (integrada a Raspberry 2) que possa registrar diversas imagens, e que essas, por sua vez, também serão usadas para a identificação e a detecção da posição das abelhas (se estão entrando ou saindo) para a realização de uma contagem mais robusta no apiário. Esse último procedimento é realizado fazendo o uso de algoritmos de aprendizado de máquina.
